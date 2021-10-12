@@ -1,13 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Drawer from './routes/drawer'
+import AppContainer from './routes/switch'
+import Firebase,{FirebaseProvider} from './routes/firebaseConfig'
+// import LoginStack from './routes/loginStack';
+import AuthLoading from './test/authLoading'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    
+    <FirebaseProvider value={Firebase}>
+      <AppContainer/>
+
+      {/* <Drawer/> */}
+      {/* <LoginStack/> */}
+    </FirebaseProvider>
+    // <View>
+    //   <Text>Hello</Text>
+    // </View>
   );
 }
 
